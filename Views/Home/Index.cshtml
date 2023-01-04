@@ -1,0 +1,21 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome Users and Developers</h1>
+    <p><b>Developers</b></p>
+    <p>This application uses SNS topic for event handling. When you create, view, edit or delete a note, </p>
+    <p>the correspondig events NoteCreated, NoteEdited, NoteViewed, NoteDeleted is triggered. You can either</p>
+    <p>store and pull your account accessId and access secret from secrets manager or add them to the appsettings.json</p>
+    <br/>
+    <p>All your notes are stored in S3 bucket. You have to create a S3 bucket and add the S3 end point, your 
+    <p> account access Id and access secret. </p> 
+    <br/>
+    <p>The app uses Github as the identity provider. So developers have to register the app in GitHub to get client Id 
+        and Client Secret.</p>
+    <p><b>Users</b></p>
+    <p>It uses GitHub as the identity provider so it is necessary that the user has Github credentials to login</p>
+ </div>
+
+

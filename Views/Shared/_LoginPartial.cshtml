@@ -1,0 +1,24 @@
+﻿@using System.Security.Claims
+@using Microsoft.AspNetCore.Http
+
+@if (User.Identity.IsAuthenticated)
+{
+    <form asp-area="" asp-controller="Account" asp-action="Logout" method="post" id="logoutForm" class="d-flex justify-content-end">
+        <ul class="navbar-nav flex-grow-1 justify-content-end">
+            <li>
+                <a class="nav-link text-light" title="Manage">Hello @(((ClaimsIdentity)User.Identity).FindFirst("urn:github:name").Value)!</a>
+            </li>
+            <li>
+                <button type="submit" class="btn btn-link nav-btn nav-link text-light">Log Out</button>
+            </li>
+        </ul>
+    </form>
+}
+else
+{
+    <ul class="navbar-nav flex-grow-1 justify-content-end">
+        <li>
+            <a class="nav-link text-light" asp-area="" asp-controller="Account" asp-action="Login">Log In</a>
+        </li>
+    </ul>
+}
